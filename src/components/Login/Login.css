@@ -1,0 +1,10 @@
+.login__container {
+  height: 100vh;
+}
+
+.login__form {
+  padding: 25px;
+  border: 1px solid lightgray;
+  border-radius: 7px;
+  box-shadow: -8px 13px 26px -5px rgba(138, 132, 132, 0.7);
+}
