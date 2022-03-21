@@ -26,7 +26,7 @@ const Login = () => {
         password:password,
         loggedIn: true
       }));
-      navigate(`/Blogs`);
+      navigate(`/blogs`);
 
     }
 

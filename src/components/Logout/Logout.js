@@ -1,8 +1,25 @@
 import React from 'react'
-import { Button, Card, Container, Row } from 'react-bootstrap'
+import { Button, Card, Container, Form, Row } from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from "react-router-dom"
+import { logout } from '../../redux/userSlice'
 import './Logout.css'
 
 const Logout = () => {
+  
+  let navigate = useNavigate();
+
+    const dispatch = useDispatch()
+
+    const handleLogout = (e) =>{
+      e.preventDefault();
+
+      dispatch(logout());
+      navigate(`/login`);
+
+    }
+
+
   return (
   
     <Container>
@@ -10,7 +27,9 @@ const Logout = () => {
       <Card style={{ width: '25%' }} className='logout__card'>
         <Card.Body className='text-center'>
           <Card.Title className='mb-3'>Logout Successfully</Card.Title>
-          <Button variant="primary">Go To Home Page</Button>
+          <Form onSubmit={handleLogout}>
+          <Button variant="primary" type='submit'>Go To Home Page</Button>
+          </Form>
         </Card.Body>
       </Card>
       </Row>

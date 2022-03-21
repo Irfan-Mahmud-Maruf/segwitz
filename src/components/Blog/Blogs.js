@@ -1,8 +1,17 @@
 import React from 'react'
 import { Button, Container, Navbar } from 'react-bootstrap'
+import { useNavigate } from "react-router-dom"
 import AllBlogs from './AllBlogs'
 
 const Blogs = () => {
+  let navigate = useNavigate();
+  const handleAddBlog = () =>{
+    navigate(`/add-blog`);
+  }
+  const handleLogout = () =>{
+    navigate(`/logout`);
+  }
+
   return (
     <>
     <Navbar bg="light" expand="lg">
@@ -14,8 +23,8 @@ const Blogs = () => {
       </form>
       </div>
       <div>
-        <Button variant="primary" className='me-2'> Write New Blog</Button>
-        <Button variant="primary"> Logout</Button>
+        <Button variant="primary" className='me-2' onClick={handleAddBlog}> Write New Blog</Button>
+        <Button variant="primary" onClick={handleLogout}> Logout</Button>
 
       </div>
       </Container>
