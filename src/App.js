@@ -11,10 +11,19 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Home Page Route */}
         <Route path="/" element={<Login />} />
+
+        {/* Login page Route */}
         <Route path="/login" element={<Login />} />
+
+        {/* Logout page  Route*/}
         <Route path="/logout" element={<Logout />} />
+
+        {/* Blogs page  Route*/}
         <Route path="/blogs" element={<Blogs />} />
+
+        {/* Add-Blogs page  Route*/}
         <Route path="/add-blog" element={<AddBlog />} />
       </Routes>
   </BrowserRouter>

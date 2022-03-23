@@ -4,38 +4,41 @@ import { useNavigate } from "react-router-dom";
 import './Blog.css';
 
 const AddBlog = () => {
+  // initial states
   const[title, setTitle]=useState('');
   const[image, setImage]=useState('');
   const[details, setDetails]=useState('');
   
 
     let navigate = useNavigate();
-
+    
+    // add blog button event handle
     const handleSubmit = (e, title, image, details) =>{
       e.preventDefault();
+      
+      // save blogs to local storage
       let allBlogs = localStorage.getItem("blogs");
       let tempBlogs = JSON.parse(allBlogs)||[];
-
       const newPost = {
         title, image, details
-      }      
-      navigate(`/blogs`);
-      console.log(newPost);
-      
+      }
       tempBlogs.push(newPost);
       localStorage.setItem("blogs", JSON.stringify(tempBlogs))
+
+      // redirect to blog page
+      navigate(`/blogs`);
     }
     
   return (
     <Container>
       <Row className='addblog__container'>
-        <Card style={{ width: '50%' }}  className='addblog__card'>
+        <Card className='addblog__card'>
           <form className='p-3' onSubmit={(e) => handleSubmit(e, title, image, details)}>
             <div className="mb-3">
-              <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Blog Title' value={title} onChange = {(e) => setTitle(e.target.value)} required/>
+              <input type="text" className="form-control" id="exampleInputEmail1" placeholder='Blog Title' value={title} onChange = {(e) => setTitle(e.target.value)} required/>
             </div>
             <div className="mb-3">
-              <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Image Url'
+              <input type="text" className="form-control" id="exampleInputEmail1" placeholder='Image Url'
               value={image} onChange = {(e) => setImage(e.target.value)} required/>
             </div>
             <div className="mb-3">

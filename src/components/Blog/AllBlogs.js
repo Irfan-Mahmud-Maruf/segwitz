@@ -2,16 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 
 const AllBlogs = () => {
+  // initial states
   const [blogs, setBlogs] = useState([]);
-  
+
+  // Get blogs from local storage
   useEffect(()=>{
     const getBlog = JSON.parse(localStorage.getItem('blogs'));
      if (getBlog) setBlogs(getBlog);
   },[])
-  console.log(blogs);
+  
   return (
     <Container>
       {
+        // map blogs and showing the blog into a card
         blogs && blogs.map((blog,i) => (
           <div key={i} className="card mt-3">
         <div className="row g-0">

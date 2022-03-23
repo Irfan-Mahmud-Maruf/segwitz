@@ -6,10 +6,16 @@ import AllBlogs from './AllBlogs'
 const Blogs = () => {
   let navigate = useNavigate();
 
+
+  // add blog button event handle
   const handleAddBlog = () =>{
+    // redirect to add blog page
     navigate(`/add-blog`);
   }
+
+  // logout button event handle
   const handleLogout = () =>{
+    // redirect to logout page
     navigate(`/logout`);
   }
 

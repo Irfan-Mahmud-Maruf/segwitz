@@ -14,6 +14,8 @@ const Logout = () => {
     const handleLogout = (e) =>{
       e.preventDefault();
       dispatch(logout());
+
+      // redirect to login page
       navigate(`/login`);
 
     }
@@ -23,7 +25,7 @@ const Logout = () => {
   
     <Container>
       <Row className='logout__container'>
-      <Card style={{ width: '25%' }} className='logout__card'>
+      <Card className='logout__card'>
         <Card.Body className='text-center'>
           <Card.Title className='mb-3'>Logout Successfully</Card.Title>
           <Form onSubmit={handleLogout}>

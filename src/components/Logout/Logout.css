@@ -7,3 +7,24 @@
 .logout__card {
   box-shadow: -8px 13px 26px -5px rgba(138, 132, 132, 0.7);
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 320px) {
+  .logout__card {
+    width: 75%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .logout__card {
+    width: 50%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1024px) {
+  .logout__card {
+    width: 25%;
+  }
+}

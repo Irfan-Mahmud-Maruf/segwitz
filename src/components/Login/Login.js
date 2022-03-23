@@ -9,6 +9,7 @@ import './Login.css'
 
 const Login = () => {
 
+  // initial states
     const[name, setName]=useState('');
     const[email, setEmail]=useState('');
     const[password, setPassword]=useState('');
@@ -26,17 +27,21 @@ const Login = () => {
         password:password,
         loggedIn: true
       }));
-      navigate(`/blogs`);
 
+      // redirect to blog page
+      navigate(`/blogs`);
     }
 
   return (
     <Container>
         <Row  className='d-flex align-items-center login__container'>
+          
+          {/* login image part */}
           <Col xs={12} md={7}>
           <img src={loginImg} alt="" className='img-fluid'/>
           </Col>
-            
+
+            {/* login form part */}
           <Col xs={12} md={4}>
             <h1 className='mb-4 mt-3 text-center text-secondary'>Please Login</h1>
             <div className='login__form'>
