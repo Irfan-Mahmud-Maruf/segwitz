@@ -1,12 +1,10 @@
-import './App.css';
 import {
-  BrowserRouter,
-  Routes,
-  Route,
+  BrowserRouter, Route, Routes
 } from "react-router-dom";
-import Login from "./components/Login/Login"
-import Blogs from "./components/Blog/Blogs"
-import AddBlog from "./components/Blog/AddBlog"
+import './App.css';
+import AddBlog from "./components/Blog/AddBlog";
+import Blogs from "./components/Blog/Blogs";
+import Login from "./components/Login/Login";
 import Logout from './components/Logout/Logout';
 
 function App() {

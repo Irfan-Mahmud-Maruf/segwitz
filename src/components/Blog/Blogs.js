@@ -5,6 +5,7 @@ import AllBlogs from './AllBlogs'
 
 const Blogs = () => {
   let navigate = useNavigate();
+
   const handleAddBlog = () =>{
     navigate(`/add-blog`);
   }

@@ -13,7 +13,6 @@ const Logout = () => {
 
     const handleLogout = (e) =>{
       e.preventDefault();
-
       dispatch(logout());
       navigate(`/login`);
 
